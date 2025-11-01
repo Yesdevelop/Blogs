@@ -1,9 +1,9 @@
 ---
 title: About
 language: en-US
+date: 2025-11-01 23:04:23
+tags:
 ---
-
-# Hi, I'm ForYes 🫱
 
 I'm a senior high school student living in China.
 I have a little experience in C++ and web development.
