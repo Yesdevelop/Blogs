@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ForYes | Blogs</title>
 </head>
@@ -20,6 +19,7 @@
         <div class="nav">
           <a class="nav-item active" href="javascript:;">Home</a>
           <a class="nav-item" href="javascript:;">Archives</a>
+          <a class="nav-item" href="javascript:;">About</a>
         </div>
         <div class="search">
           <input id="search-input" placeholder="Search" />
@@ -28,35 +28,35 @@
     </div>
 
     <div class="view">
-
+      
       <!-- 首页样式 -->
       <template id="home-view">
-        <div class="main"></div>
-        <div class="aside"></div>
+        <div class="main card"></div>
+        <div class="aside card"></div>
       </template>
 
       <!-- 文章样式 -->
       <template class="article-view">
-        <div class="main">
+        <div class="main card">
           <div class="article"></div>
         </div>
-        <div class="aside"></div>
+        <div class="aside card"></div>
       </template>
 
       <!-- 归档样式 -->
       <template class="archives-view">
-        <div class="main"></div>
-        <div class="aside"></div>
+        <div class="main card"></div>
+        <div class="aside card"></div>
       </template>
 
     </div>
 
     <!-- 尾部页脚 -->
     <div class="footer">
-      <div class="introduction">
+      <div class="text">
         This blog is written by its author and packed using Vite
       </div>
-      <div class="copyright">
+      <div class="text">
         Copyright © 2026 ForYes All Rights Reserved
       </div>
     </div>
