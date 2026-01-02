@@ -4,15 +4,66 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ForYes | Blogs</title>
-
-  
 </head>
 
 <body>
-  <div id="app"></div>
+
+  <div id="app">
+
+    <!-- 首部导航栏 -->
+    <div class="header">
+      <div class="real-header">
+        <div class="site-title">ForYes</div>
+        <div class="nav">
+          <a class="nav-item active" href="javascript:;">Home</a>
+          <a class="nav-item" href="javascript:;">Archives</a>
+        </div>
+        <div class="search">
+          <input id="search-input" placeholder="Search" />
+        </div>
+      </div>
+    </div>
+
+    <div class="view">
+
+      <!-- 首页样式 -->
+      <template id="home-view">
+        <div class="main"></div>
+        <div class="aside"></div>
+      </template>
+
+      <!-- 文章样式 -->
+      <template class="article-view">
+        <div class="main">
+          <div class="article"></div>
+        </div>
+        <div class="aside"></div>
+      </template>
+
+      <!-- 归档样式 -->
+      <template class="archives-view">
+        <div class="main"></div>
+        <div class="aside"></div>
+      </template>
+
+    </div>
+
+    <!-- 尾部页脚 -->
+    <div class="footer">
+      <div class="introduction">
+        This blog is written by its author and packed using Vite
+      </div>
+      <div class="copyright">
+        Copyright © 2026 ForYes All Rights Reserved
+      </div>
+    </div>
+
+  </div>
   <script type="module" src="/src/main.js"></script>
+
 </body>
 
 </html>
