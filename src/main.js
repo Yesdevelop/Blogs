@@ -6,16 +6,14 @@ const LAYOUT_ARCHIVES = 2;
 const LAYOUT_ABOUT = 3;
 
 function cloneTemplate(templateSelector, targetSelector) {
-    const HOME_TEMPLATE = document.querySelector(templateSelector);
-    const CONTENT = HOME_TEMPLATE.content.cloneNode(true);
-    document.querySelector(targetSelector).appendChild(CONTENT);
+    const homeTemplate = document.querySelector(templateSelector);
+    const content = homeTemplate.content.cloneNode(true);
+    document.querySelector(targetSelector).appendChild(content);
 }
 
 class Blogs {
     layout = LAYOUT_HOME;
-    url = "/";
-
-    refresh() {
+    loadPage() {
         if (this.layout == LAYOUT_HOME) {
             cloneTemplate("#home-view", ".view");
         }
@@ -23,8 +21,8 @@ class Blogs {
 }
 
 function main() {
-    let blogs = new Blogs();
-    blogs.refresh();
+    const blogs = new Blogs();
+    blogs.loadPage();
 }
 
 main();
