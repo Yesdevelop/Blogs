@@ -147,17 +147,18 @@ input:focus {
     background: var(--card-color);
     border-radius: 16px;
     box-shadow: var(--card-box-shadow);
+    padding: 10%;
 }
 
 .view .main {
-    max-width: 800px;
-    height: 1000px;
     flex: 1;
+    max-width: 800px;
 }
 
 .view .aside {
     display: flex;
     flex-direction: column;
+    gap: 30px;
     width: 30%;
     max-width: 300px;
 }
@@ -166,10 +167,9 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: flex-start;
     width: 100%;
-    padding: 10%;
 }
+
 .aside .profile > * {
     margin-bottom: 10px;
     width: 100%;
@@ -179,7 +179,6 @@ input:focus {
 .aside .profile .profile-image {
     max-width: 100px;
     aspect-ratio: 1;
-    background-image: url("/profile.jpg") ;
     background-size: cover;
     border-radius: 100%;
 }
@@ -217,4 +216,17 @@ input:focus {
     background-color: var(--primary-color);
     color: var(--text-color);
     border-radius: 8px;
+}
+
+.aside .announce .headline {
+    color: var(--text-color);
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.aside .announce .text p {
+    line-height: 120%;
+    margin-bottom: 5px;
 }
