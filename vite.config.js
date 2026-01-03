@@ -51,5 +51,6 @@ export default defineConfig({
     ],
     build: {
         cssCodeSplit: false,
+        outDir: 'docs',
     }
 });
