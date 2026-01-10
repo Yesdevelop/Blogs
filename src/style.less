@@ -5,7 +5,7 @@
 
 :root {
     font-family: serif;
-    color-scheme: light dark;
+    --white: #fff;
     --primary-color: #369f70;
     --primary-color-light: #51de9e;
     --primary-color-fade: #369f7022;
@@ -24,7 +24,7 @@
         --bg-color: #333;
         --bg-color-fade: #8881;
         --outline-strong-color: #8888;
-        --text-color: #eee;
+        --text-color: #ccc;
         --primary-bg-text-color: #fff;
         --card-color: #2f2f2f;
         --card-box-shadow: 0 3px 8px 6px #fff2;
@@ -36,6 +36,7 @@
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* 基础元素 */
@@ -70,7 +71,7 @@ input {
         left: 0;
         width: 100%;
         height: 60px;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -97,7 +98,6 @@ input {
             .nav-item {
                 font-size: 18px;
                 margin-right: 30px;
-                color: var(--text-color);
 
                 &.active {
                     color: var(--primary-color);
@@ -121,19 +121,23 @@ input {
         left: 0;
         top: 60px;
         width: 100%;
-        height: calc(80vh - 60px);
-        background: linear-gradient(to right,
-                var(--primary-color),
-                var(--primary-color-light),
-                var(--primary-color),
-            );
+        height: @ground-height;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color-fade);
 
         .headline {
-            text-align: center;
-            margin-top: calc(@ground-height / 2 - 2vh);
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            color: var(--primary-bg-text-color);
+            color: var(--primary-color);
+        }
+
+        .description {
+            color: var(--primary-color);
+            text-shadow: 1px 1px 10px #888;
         }
     }
 }
@@ -162,6 +166,7 @@ input {
     padding: 3vh 10vw;
     height: 100%;
     background-color: var(--bg-color);
+    border-top: 1px solid var(--primary-color);
 
     .card {
         background: var(--card-color);
@@ -173,6 +178,7 @@ input {
     .main {
         flex: 1;
         max-width: 800px;
+        min-height: 1000px;
         padding: 3%;
 
         .post {
@@ -260,7 +266,7 @@ input {
             }
 
             .bias {
-                color: var(--text-color);
+                color: var(--white);
             }
 
             .info {
