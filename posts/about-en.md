@@ -4,10 +4,6 @@ date: 2025/12/27
 lang: en
 ---
 
-# Hi, I'm ForYes 🫱
-
-Welcome to my overview 👋
-
 I'm a senior high school student living in China.
 I have a little experience in C++ and web development.
 And a Chinese Chess AI project called [Chess98](https://github.com/StarlightChessOrg/Chess98) is now developing by my friend and I. If you are interested in that welcome to have a look.

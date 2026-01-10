@@ -7,6 +7,7 @@
     font-family: serif;
     color-scheme: light dark;
     --primary-color: #369f70;
+    --primary-color-light: #51de9e;
     --primary-color-fade: #369f7022;
     --bg-color: #f4f6f9;
     --bg-color-fade: #8881;
@@ -58,8 +59,9 @@ input {
 
 /* 页头页脚 */
 .header {
+    @ground-height: 40vh;
     width: 100%;
-    padding-top: 60px;
+    padding-top: calc(60px + @ground-height);
     flex: none;
 
     .nav {
@@ -68,6 +70,7 @@ input {
         left: 0;
         width: 100%;
         height: 60px;
+        z-index: 1;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -112,6 +115,28 @@ input {
             }
         }
     }
+
+    .ground {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        height: @ground-height;
+        background: linear-gradient(30deg,
+                var(--primary-color-light),
+                var(--primary-color),
+                var(--primary-color-light),
+            );
+
+        .headline {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-bg-text-color);
+        }
+    }
 }
 
 .footer {
@@ -131,11 +156,13 @@ input {
 /* 主区域和侧边栏 */
 .view {
     flex: 1;
+    z-index: 1;
     display: flex;
     justify-content: center;
     gap: 3vw;
     padding: 3vh 10vw;
     height: 100%;
+    background-color: var(--bg-color);
 
     .card {
         background: var(--card-color);

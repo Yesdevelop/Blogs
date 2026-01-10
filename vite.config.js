@@ -39,6 +39,7 @@ function injectPosts() {
     };
 }
 
+// 注入announce
 function injectAnnounce() {
     const PLUGIN_NAME = "AnnounceInjector";
     const PLACEHOLDER = "/* INJECT_ANNOUNCE */";
@@ -55,6 +56,8 @@ function injectAnnounce() {
         }
     };
 }
+
+
 
 // 导出配置
 export default defineConfig({
