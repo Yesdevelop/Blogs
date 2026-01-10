@@ -117,21 +117,20 @@ input {
     }
 
     .ground {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: fixed;
         left: 0;
         top: 60px;
         width: 100%;
-        height: @ground-height;
-        background: linear-gradient(30deg,
-                var(--primary-color-light),
+        height: calc(80vh - 60px);
+        background: linear-gradient(to right,
                 var(--primary-color),
                 var(--primary-color-light),
+                var(--primary-color),
             );
 
         .headline {
+            text-align: center;
+            margin-top: calc(@ground-height / 2 - 2vh);
             font-size: 24px;
             font-weight: bold;
             color: var(--primary-bg-text-color);
