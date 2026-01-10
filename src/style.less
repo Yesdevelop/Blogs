@@ -5,10 +5,11 @@
 
 :root {
     font-family: serif;
+    background-color: var(--bg-color);
     --white: #fff;
     --primary-color: #369f70;
     --primary-color-light: #51de9e;
-    --primary-color-fade: #369f7022;
+    --primary-color-fade: #369f7033;
     --bg-color: #f4f6f9;
     --bg-color-fade: #8881;
     --outline-strong-color: #8888;
@@ -20,11 +21,12 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        background-color: var(--bg-color);
         --primary-color: #369f70;
         --bg-color: #333;
         --bg-color-fade: #8881;
         --outline-strong-color: #8888;
-        --text-color: #ccc;
+        --text-color: #eee;
         --primary-bg-text-color: #fff;
         --card-color: #2f2f2f;
         --card-box-shadow: 0 3px 8px 6px #fff2;
@@ -127,7 +129,9 @@ input {
         gap: 10px;
         align-items: center;
         justify-content: center;
-        background-color: var(--primary-color-fade);
+        background: linear-gradient(45deg, #369f7099, #369f70bb, #369f7033, #369f70bb, #369f7099);
+        border-top: 1px solid var(--primary-color);
+        border-bottom: 1px solid var(--primary-color);
 
         .headline {
             font-size: 28px;
@@ -266,7 +270,7 @@ input {
             }
 
             .bias {
-                color: var(--white);
+                color: var(--text-color);
             }
 
             .info {
