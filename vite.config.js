@@ -26,7 +26,7 @@ function getPosts() {
 // 注入posts参数到js里
 function injectPosts() {
     const PLUGIN_NAME = "PostInjector";
-    const PLACEHOLDER = "/* VITE_POSTS_INJECTOR */";
+    const PLACEHOLDER = "/* INJECT_POSTS */";
     const VARIABLE_NAME = "posts";
 
     return {
@@ -39,11 +39,29 @@ function injectPosts() {
     };
 }
 
+function injectAnnounce() {
+    const PLUGIN_NAME = "AnnounceInjector";
+    const PLACEHOLDER = "/* INJECT_ANNOUNCE */";
+    const CONTENT = `
+        <p>This blog is still under development so the content is not able to view</p>
+        <p>In this blog I'd like to share something about my own and some tech articles as well</p>
+        <p>By the way I decided to write it directly without any frameworks thus it takes some time</p>
+    `
+
+    return {
+        name: PLUGIN_NAME,
+        transformIndexHtml(html) {
+            return html.replace(PLACEHOLDER, CONTENT);
+        }
+    };
+}
+
 // 导出配置
 export default defineConfig({
     plugins: [
-        // 把posts内的文章注入页面中
+        // 注入
         injectPosts(),
+        injectAnnounce(),
         // 压缩html
         createHtmlPlugin({ minify: true, }),
         // 合并单文件
