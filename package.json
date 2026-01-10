@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "less": "^4.5.1",
     "remove-markdown": "^0.6.2",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-singlefile": "^2.3.0"

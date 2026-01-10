@@ -1,4 +1,4 @@
-import "./style.css"
+import "./style.less"
 
 const LAYOUT_HOME = 0;
 const LAYOUT_ARTICLE = 1;
