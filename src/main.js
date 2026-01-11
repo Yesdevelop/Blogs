@@ -32,7 +32,9 @@ function loadPosts() {
                 last.innerHTML = last.innerHTML.replace("%title%", post.title);
                 last.innerHTML = last.innerHTML.replace("%date%", post.date);
                 last.innerHTML = last.innerHTML.replace("%tag%", post.tags[0]);
-                last.innerHTML = last.innerHTML.replace("%preview%", post.preview);                
+                last.innerHTML = last.innerHTML.replace("%preview%", post.preview);
+                console.log(post)
+                last.innerHTML = last.innerHTML.replace(" hidden", post.image ? `style="background: url('${post.image}')` : " hidden");                                
             }
         } else {
             setTimeout(loadPosts, 10);

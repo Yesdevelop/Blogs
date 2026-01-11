@@ -18,8 +18,8 @@ function getPosts() {
         const { data, content } = matter(fileContent);
 
         const preview = data.description || content.replaceAll(/\r|\n/g, "").substring(0, LENGTH) + "...";
-        const { title, lang, tags, date, updated } = data;
-        return { title, lang, tags, date, updated, preview };
+        data.preview = preview;
+        return data;
     });
     return ret;
 }
