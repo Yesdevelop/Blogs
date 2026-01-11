@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { viteSingleFile } from "vite-plugin-singlefile";
+import vitePluginRestart from "vite-plugin-restart"
 
 // 获取文章的预览内容
 function getPosts() {
@@ -16,7 +17,7 @@ function getPosts() {
         const fileContent = fs.readFileSync(path.join(postsDir, file), "utf-8");
         const { data, content } = matter(fileContent);
 
-        const preview = content.replaceAll(/\r|\n/g, "").substring(0, LENGTH) + "...";
+        const preview = data.description || content.replaceAll(/\r|\n/g, "").substring(0, LENGTH) + "...";
         const { title, lang, tags, date, updated } = data;
         return { title, lang, tags, date, updated, preview };
     });
@@ -69,6 +70,7 @@ export default defineConfig({
         createHtmlPlugin({ minify: true, }),
         // 合并单文件
         viteSingleFile(),
+        vitePluginRestart({ restart: ['posts/**/*.md'] })
     ],
     build: {
         cssCodeSplit: false,

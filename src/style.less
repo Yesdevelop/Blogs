@@ -4,7 +4,6 @@
 }
 
 :root {
-    font-family: serif;
     background-color: var(--bg-color);
     --white: #fff;
     --primary-color: #369f70;
@@ -150,7 +149,7 @@ input {
     flex: none;
     width: 100%;
     padding: 10px;
-    background-color: var(--primary-color-fade);
+    background: linear-gradient(to bottom, var(--primary-color-fade), var(--primary-color-fade), var(--bg-color));
     border-top: 1px solid var(--primary-color);
 
     .text {
@@ -188,7 +187,7 @@ input {
         .post {
             display: flex;
             width: 100%;
-            min-height: 160px;
+            min-height: 180px;
             border-top: 1px solid var(--text-color);
 
             &:last-child {
@@ -213,7 +212,7 @@ input {
                     gap: 20px;
                 }
 
-                .description {
+                .preview {
                     height: 3hl;
                     display: -webkit-box;
                     display: -moz-box;

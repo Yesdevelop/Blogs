@@ -23,16 +23,19 @@ function loadPage() {
 }
 
 function loadPosts() {
-    console.log(1);
     if (window.layout == LAYOUT_HOME) {
         if (window.posts) {
+            window.posts.reverse();
             for (const post of window.posts) {
                 const target = cloneTemplate("#post", ".main");
                 const last = target.querySelector(".post:last-child");
                 last.innerHTML = last.innerHTML.replace("%title%", post.title);
+                last.innerHTML = last.innerHTML.replace("%date%", post.date);
+                last.innerHTML = last.innerHTML.replace("%tag%", post.tags[0]);
+                last.innerHTML = last.innerHTML.replace("%preview%", post.preview);                
             }
         } else {
-            setTimeout(loadPosts, 50);
+            setTimeout(loadPosts, 10);
         }
     }
 }
