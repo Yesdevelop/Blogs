@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+
+    ::-webkit-scrollbar {
+        display: hidden;
+    }
+}
+
+:root {
+    background-color: var(--bg-color);
+    --white: #fff;
+    --primary: #369f70;
+    --primary-light: #51de9e;
+    --primary-fade: #369f7033;
+    --bg-color: #f4f6f9;
+    --bg-color-fade: #8881;
+    --outline-strong-color: #8888;
+    --text-color: #333;
+    --primary-bg-text-color: #fff;
+    --card-color: #fff;
+    --card-box-shadow: 0 3px 8px 6px #0002;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: var(--bg-color);
+        --primary: #369f70;
+        --bg-color: #333;
+        --bg-color-fade: #8881;
+        --outline-strong-color: #8888;
+        --text-color: #eee;
+        --primary-bg-text-color: #fff;
+        --card-color: #2f2f2f;
+        --card-box-shadow: 0 3px 8px 6px #fff2;
+    }
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.card {
+    background: var(--card-color);
+    border-radius: 16px;
+    box-shadow: var(--card-box-shadow);
+    padding: 8%;
+}
+
+/* 基础元素 */
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+input {
+    border: 0;
+    background-color: var(--bg-color-fade);
+    outline: 1px solid var(--outline-strong-color);
+    padding: 0 10px;
+    color: var(--primary);
+    border-radius: 6px;
+
+    &:focus {
+        outline: 2px solid var(--primary)
+    }
+}

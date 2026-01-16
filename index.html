@@ -2,122 +2,29 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/rc/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ForYes | Blogs</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/rc/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForYes | Blogs</title>
 </head>
 
 <body>
 
-  <div id="app">
-
-    <!-- 首部导航栏 -->
-    <div class="header">
-      <div class="nav">
-        <div class="site-title">ForYes</div>
-        <div class="nav-items">
-          <a class="nav-item active" href="javascript:;">Home</a>
-          <a class="nav-item" href="javascript:;">Archives</a>
-          <a class="nav-item" href="javascript:;">About</a>
+    <div id="app">
+        !header
+        <div class="view">
+            <main>
+                !homeview
+            </main>
+            <aside>
+                !homeaside
+            </aside>
         </div>
-        <div class="search">
-          <input id="search-input" placeholder="Search" />
-        </div>
-      </div>
-      <div class="ground">
-        <div class="headline">ForYes Blogs</div>
-        <div class="description">Years rolling by just like a dream</div>
-      </div>
+        !footer
     </div>
 
-    <div class="view">
-
-      <!-- 首页样式 -->
-      <template id="home-view">
-        <div class="main card">
-          <!-- 帖子样式 -->
-          <template id="post">
-            <div class="post">
-              <a href="javascript:;">
-                <div class="left">
-                  <div class="title">%title%</div>
-                  <div class="info">
-                    <div class="date">%date%</div>
-                    <div class="tag">%tag%</div>
-                  </div>
-                  <div class="preview">%preview%</div>
-                </div>
-                <div class="right" hidden></div>
-              </a>
-            </div>
-          </template>
-        </div>
-        <div class="aside">
-          <div class="profile card">
-            <div class="profile-image" style="background-image: url('/rc/profile.jpg');"></div>
-            <div class="name">ForYes</div>
-            <div class="bias">Make It Awesome</div>
-            <div class="info">
-              <div class="item">
-                <div class="description">Articles</div>
-                <div class="number">0</div>
-              </div>
-              <div class="item">
-                <div class="description">Tags</div>
-                <div class="number">0</div>
-              </div>
-              <div class="item">
-                <div class="description">Days</div>
-                <div class="number">0</div>
-              </div>
-            </div>
-            <a class="button" href="https://github.com/YesDevelop" target="_blank">My GitHub</a>
-            <div class="last-update">Last updated on 2026/1/1</div>
-          </div>
-          <div class="announce card">
-            <div class="headline">Hi there</div>
-            <div class="text">
-              /* INJECT_ANNOUNCE */
-            </div>
-          </div>
-        </div>
-      </template>
-
-      <!-- 文章样式 -->
-      <template id="article-view">
-        <div class="main card">
-          <div class="article"></div>
-        </div>
-        <div class="aside card"></div>
-      </template>
-
-      <!-- 归档样式 -->
-      <template id="archives-view">
-        <div class="main card"></div>
-        <div class="aside card"></div>
-      </template>
-
-      <!-- 关于样式 -->
-      <template id="about-view">
-        <div class="main card"></div>
-      </template>
-
-    </div>
-
-    <!-- 尾部页脚 -->
-    <div class="footer">
-      <div class="text">
-        This blog is written by its author and packed using Vite
-      </div>
-      <div class="text">
-        Copyright © 2026 ForYes All Rights Reserved
-      </div>
-    </div>
-  </div>
-
-  <script>/* INJECT_POSTS */</script>
-  <script type="module" src="/src/main.js"></script>
+    <script>/* INJECT_POSTS */</script>
+    <script type="module" src="/src/main.js"></script>
 
 </body>
 

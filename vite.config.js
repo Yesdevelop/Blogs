@@ -6,6 +6,26 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import vitePluginRestart from "vite-plugin-restart"
 
+function components() {
+    const PLUGIN_NAME = "components";
+    
+    const header = fs.readFileSync("src/components/header.html");
+    const footer = fs.readFileSync("src/components/footer.html");
+    const homeaside = fs.readFileSync("src/components/homeaside.html");
+    const homeview = fs.readFileSync("src/components/homeview.html");
+
+    return {
+        name: PLUGIN_NAME,
+        transformIndexHtml(html) {
+            return html
+                .replace("!header", header)
+                .replace("!footer", footer)
+                .replace("!homeaside", homeaside)
+                .replace("!homeview", homeview)
+        }
+    };
+}
+
 // 获取文章的预览内容
 function getPosts() {
     const POSTS_DIR = "posts";
@@ -26,7 +46,7 @@ function getPosts() {
 
 // 注入posts参数到js里
 function injectPosts() {
-    const PLUGIN_NAME = "PostInjector";
+    const PLUGIN_NAME = "injectPosts";
     const PLACEHOLDER = "/* INJECT_POSTS */";
     const VARIABLE_NAME = "posts";
 
@@ -42,7 +62,7 @@ function injectPosts() {
 
 // 注入announce
 function injectAnnounce() {
-    const PLUGIN_NAME = "AnnounceInjector";
+    const PLUGIN_NAME = "injectAnnounce";
     const PLACEHOLDER = "/* INJECT_ANNOUNCE */";
     const CONTENT = `
         <p>This blog is still under development so the content is not able to view</p>
@@ -58,19 +78,18 @@ function injectAnnounce() {
     };
 }
 
-
-
 // 导出配置
 export default defineConfig({
     plugins: [
         // 注入
+        components(),
         injectPosts(),
         injectAnnounce(),
         // 压缩html
         createHtmlPlugin({ minify: true, }),
         // 合并单文件
         viteSingleFile(),
-        vitePluginRestart({ restart: ['posts/**/*.md'] })
+        vitePluginRestart({ restart: ["posts/**/*.md", "src/components/*"] })
     ],
     build: {
         cssCodeSplit: false,

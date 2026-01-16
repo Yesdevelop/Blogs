@@ -1,0 +1,80 @@
+.homeaside {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &>div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile {
+        gap: 10px;
+
+        >div,
+        >a {
+            width: 100%;
+        }
+
+        .profile-image {
+            max-width: 100px;
+            aspect-ratio: 1;
+            background-size: cover;
+            border-radius: 100%;
+        }
+
+        .name {
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .bias {
+            color: var(--text-color);
+        }
+
+        .info {
+            display: flex;
+
+            .item {
+                flex: 1;
+                border-right: 1px solid var(--text-color);
+                overflow: hidden;
+
+                &:last-child {
+                    border-right: 0;
+                }
+
+                .description {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        .button {
+            display: block;
+            padding: 8px 0;
+            background-color: var(--primary);
+            color: var(--primary-bg-text-color);
+            border-radius: 8px;
+        }
+    }
+
+    .announce {
+        .headline {
+            color: var(--text-color);
+            font-size: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--primary);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            line-height: 120%;
+            margin-bottom: 5px;
+        }
+    }
+}

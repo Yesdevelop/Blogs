@@ -17,7 +17,7 @@ function cloneTemplate(templateSelector, targetSelector) {
 
 function loadPage() {
     if (window.layout == LAYOUT_HOME) {
-        cloneTemplate("#home-view", ".view");
+        cloneTemplate("#homeview", "main");
         loadPosts();
     }
 }
@@ -27,7 +27,7 @@ function loadPosts() {
         if (window.posts) {
             window.posts.reverse();
             for (const post of window.posts) {
-                const target = cloneTemplate("#post", ".main");
+                const target = cloneTemplate("#post", ".homeview");
                 const last = target.querySelector(".post:last-child");
                 last.innerHTML = last.innerHTML.replace("%title%", post.title);
                 last.innerHTML = last.innerHTML.replace("%date%", post.date);
