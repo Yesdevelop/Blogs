@@ -89,7 +89,7 @@ export default defineConfig({
         createHtmlPlugin({ minify: true, }),
         // 合并单文件
         viteSingleFile(),
-        vitePluginRestart({ restart: ["posts/**/*.md", "src/components/*"] })
+        vitePluginRestart({ restart: ["posts/**/*.md", "src/components/*.html"] })
     ],
     build: {
         cssCodeSplit: false,
