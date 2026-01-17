@@ -19,31 +19,102 @@ header {
         border-bottom: 1px solid var(--primary);
 
         .title {
-            width: 15%;
+            padding-right: 6rem;
             flex: none;
             font-size: 24px;
             color: var(--primary);
         }
 
-        .items {
-            display: flex;
-            flex-direction: row;
+        .mobile-button-items {
             flex: 1;
+            display: none;
+            text-align: right;
+            font-size: 22px;
+            font-weight: bold;
 
-            .item {
-                font-size: 18px;
-                margin-right: 30px;
-
-                &.active {
-                    color: var(--primary);
+            @media screen and (max-width: 900px) {
+                & {
+                    display: block;
+                    color: var(--text-color);
                 }
             }
         }
 
-        .search {
-            width: 20%;
-            max-width: 300px;
-            height: 30px;
+        .navmain {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            .items {
+                display: flex;
+                flex: 1;
+
+                .item {
+                    font-size: 18px;
+                    margin-right: 30px;
+                    color: var(--text-color);
+
+                    &.active {
+                        color: var(--primary);
+                    }
+                }
+            }
+
+            .search {
+                width: 20%;
+                max-width: 300px;
+                height: 30px;
+                flex:1;
+            }
+
+            @media screen and (max-width: 900px) {
+                & {
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                    pointer-events: none;
+                    position: fixed;
+                    top: 60px;
+                    right: -70vw;
+                    width: 70vw;
+                    height: 100vh;
+                    z-index: 12;
+
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                    gap: 1rem;
+                    padding: 1rem;
+                    background-color: var(--bg-color);
+
+                    &.fadein {
+                        right: 0vw;
+                        opacity: 1;
+                    }
+
+                    .items {
+                        flex-direction: column;
+                        width: 100%;
+                        gap: 0.5rem;
+
+                        .item {
+                            width: 100%;
+                            padding: 0.5rem 2rem;
+                            border-bottom: 1px solid #7775;
+
+                            &.active {
+                                background-color: #7775;
+                                border: 0;
+                                border-radius: 8px;
+                            }
+                        }
+                    }
+
+                    .search {
+                        width: 100%;flex: none;
+                        max-width: none;
+                    }
+                }
+            }
         }
     }
 

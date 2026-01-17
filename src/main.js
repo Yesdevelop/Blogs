@@ -15,6 +15,16 @@ function cloneTemplate(templateSelector, targetSelector) {
     return target;
 }
 
+window.toggleGroundMask = () => {
+    if (document.querySelector("#ground-mask").style.opacity == "0") {
+        document.querySelector("#ground-mask").style.opacity = "0.5"
+        document.querySelector("#ground-mask").style.zIndex = "9"
+    } else {
+        document.querySelector("#ground-mask").style.opacity = "0"
+        document.querySelector("#ground-mask").style.zIndex = "-1"
+    }
+}
+
 function loadPage() {
     if (window.layout == LAYOUT_HOME) {
         cloneTemplate("#homeview", "main");
@@ -33,8 +43,7 @@ function loadPosts() {
                 last.innerHTML = last.innerHTML.replace("%date%", post.date);
                 last.innerHTML = last.innerHTML.replace("%tag%", post.tags[0]);
                 last.innerHTML = last.innerHTML.replace("%preview%", post.preview);
-                console.log(post)
-                last.innerHTML = last.innerHTML.replace(" hidden", post.image ? `style="background: url('${post.image}')` : " hidden");                                
+                last.innerHTML = last.innerHTML.replace(" hidden", post.image ? `style="background: url('${post.image}')` : " hidden");
             }
         } else {
             setTimeout(loadPosts, 10);

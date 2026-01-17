@@ -1,15 +1,40 @@
 <header>
     <nav>
         <div class="title">ForYes</div>
-        <div class="items">
-            <a class="item active" href="javascript:;">Home</a>
-            <a class="item" href="javascript:;">Archives</a>
-            <a class="item" href="javascript:;">About</a>
+        <a onclick="toggleNavmain()" href="javascript:;" class="mobile-button-items">≡</a>
+        <div class="navmain">
+            <div class="items">
+                <a class="item active" href="javascript:;">Home</a>
+                <a class="item" href="javascript:;">Archives</a>
+                <a class="item" href="javascript:;">About</a>
+            </div>
+            <input class="search" id="search-input" placeholder="Search" />
+            <div class="mobile-ground"></div>
         </div>
-        <input class="search" id="search-input" placeholder="Search" />
     </nav>
     <div class="ground">
         <div class="title">ForYes Blogs</div>
         <div class="subtitle">Years rolling by just like a dream</div>
     </div>
 </header>
+
+<script>
+    function toggleNavmain() {
+        const navmain = document.querySelector(".navmain");
+        if (getComputedStyle(navmain).visibility == "hidden") {
+            navmain.style.visibility = "visible";
+            navmain.className += " fadein";
+            window.toggleGroundMask()
+        }
+        else {
+            navmain.style.visibility = "hidden";
+            navmain.className = navmain.className.substring(0, navmain.className.length - 7);
+            window.toggleGroundMask();
+        }
+    }
+    addEventListener("click", (e) => {
+        if (e.target == document.getElementById("ground-mask")) {
+            toggleNavmain()
+        }
+    })
+</script>
