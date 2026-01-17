@@ -1,7 +1,6 @@
 ---
 title: 使用C++编写一个中国象棋AI
 date: 2026/1/1
-image: "./article-images/chinese-chess-1.png"
 lang: zh
 description: "
 本文记录了中国象棋AI项目Chess98的开发历程，同时为各位想编写象棋AI的大佬们提供一个参考。
