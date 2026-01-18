@@ -34,26 +34,6 @@
     </div>
 </div>
 
-<script>
-    function toggleNavmain() {
-        const navmain = document.querySelector(".navmain");
-        if (getComputedStyle(navmain).visibility == "hidden") {
-            navmain.style.visibility = "visible";
-            navmain.className += " fadein";
-            window.toggleGroundMask()
-        }
-        else {
-            navmain.style.visibility = "hidden";
-            navmain.className = navmain.className.substring(0, navmain.className.length - 7);
-            window.toggleGroundMask();
-        }
-    }
-    addEventListener("click", (e) => {
-        if (e.target == document.getElementById("ground-mask")) {
-            toggleNavmain()
-        }
-    })
-</script>
 
     </header>
     <div class="view">
