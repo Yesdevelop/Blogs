@@ -4,30 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/rc/favicon.svg" />
+    <link rel="stylesheet" href="src/app.less" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ForYes | Blogs</title>
+    <script type="module" src="/src/index.js"></script>
 </head>
 
 <body>
-
-    <div id="app">
-        !header
-        <div class="view">
-            <main>
-                !homeview
-            </main>
-            <aside>
-                !homeaside
-            </aside>
-        </div>
-        !footer
-    </div>
-
-    <div id="ground-mask" style="opacity: 0;"></div>
-
-    <script>/* INJECT_POSTS */</script>
-    <script type="module" src="/src/main.js"></script>
-
+    <%- include("src/app.ejs") %>
 </body>
 
 </html>

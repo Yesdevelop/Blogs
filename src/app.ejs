@@ -1,0 +1,27 @@
+<div id="app">
+
+    <header>
+        <%- include("components/header.ejs") %>
+    </header>
+    <div class="view">
+        <main>
+            <%- include("layouts/main/about.ejs") %>
+            <%- include("layouts/main/archives.ejs") %>
+            <%- include("layouts/main/home.ejs") %>
+            <%- include("layouts/main/post.ejs") %>
+            <%- include("layouts/main/search.ejs") %>
+        </main>
+        <aside>
+            <%- include("layouts/aside/about.ejs") %>
+            <%- include("layouts/aside/archives.ejs") %>
+            <%- include("layouts/aside/home.ejs") %>
+            <%- include("layouts/aside/post.ejs") %>
+            <%- include("layouts/aside/search.ejs") %>
+        </aside>
+    </div>
+    <footer>
+        <%- include("components/footer.ejs") %>
+    </footer>
+    <div id="ground-mask"></div>
+
+</div>
