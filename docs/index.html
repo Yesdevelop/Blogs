@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/rc/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForYes | Blogs</title>
+  <script type="module" crossorigin src="/assets/index-CAvsHwH6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BF18H6ri.css">
+</head>
+
+<body>
+    <div id="app">
+
+    <header>
+        <div class="header">
+    <nav>
+        <div class="title">ForYes</div>
+        <a onclick="toggleNavmain()" href="javascript:;" class="mobile-button-items">≡</a>
+        <div class="navmain">
+            <div class="items">
+                <a class="item active" href="javascript:;">Home</a>
+                <a class="item" href="javascript:;">Archives</a>
+                <a class="item" href="javascript:;">About</a>
+            </div>
+            <input class="search" id="search-input" placeholder="Search" />
+            <div class="mobile-ground"></div>
+        </div>
+    </nav>
+    <div class="ground">
+        <div class="title">ForYes Blogs</div>
+        <div class="subtitle">Years rolling by just like a dream</div>
+    </div>
+</div>
+
+<script>
+    function toggleNavmain() {
+        const navmain = document.querySelector(".navmain");
+        if (getComputedStyle(navmain).visibility == "hidden") {
+            navmain.style.visibility = "visible";
+            navmain.className += " fadein";
+            window.toggleGroundMask()
+        }
+        else {
+            navmain.style.visibility = "hidden";
+            navmain.className = navmain.className.substring(0, navmain.className.length - 7);
+            window.toggleGroundMask();
+        }
+    }
+    addEventListener("click", (e) => {
+        if (e.target == document.getElementById("ground-mask")) {
+            toggleNavmain()
+        }
+    })
+</script>
+
+    </header>
+    <div class="view">
+        <main>
+            <template id="main-about">
+    <div class="main-about">
+
+    </div>
+</template>
+
+            <template id="main-archives">
+    <div class="main-archives">
+
+    </div>
+</template>
+
+            <template id="main-home">
+    <div class="main-home">
+        <div class="posts card">
+            <template id="post">
+                <a class="post" href="javascript:;">
+                    <div class="title">%title%</div>
+                    <div class="info">
+                        <div class="date">%date%</div>
+                        <div class="tag">%tag%</div>
+                    </div>
+                    <div class="preview">%preview%</div>
+                </a>
+            </template>
+        </div>
+    </div>
+</template>
+
+            <template id="main-post">
+    <div class="main-post">
+
+    </div>
+</template>
+
+            <template id="main-search">
+    <div class="main-search">
+
+    </div>
+</template>
+
+        </main>
+        <aside>
+            <template id="aside-about">
+    <div class="aside-about">
+
+    </div>
+</template>
+
+            <template id="aside-archives">
+    <div class="aside-archives">
+
+    </div>
+</template>
+
+            <template id="aside-home">
+    <div class="aside-home">
+        <div class="profile card">
+            <div class="profile-image" style="background-image: url('/rc/profile.webp');"></div>
+            <div class="name">ForYes</div>
+            <div class="bias">Make It Awesome</div>
+            <div class="info">
+                <div class="item">
+                    <div class="description">Articles</div>
+                    <div class="number">0</div>
+                </div>
+                <div class="item">
+                    <div class="description">Tags</div>
+                    <div class="number">0</div>
+                </div>
+                <div class="item">
+                    <div class="description">Days</div>
+                    <div class="number">0</div>
+                </div>
+            </div>
+            <a class="button" href="https://github.com/YesDevelop" target="_blank">My GitHub</a>
+            <div class="last-update">Last updated on 2026/1/1</div>
+        </div>
+        <div class="announce card">
+            <div class="headline">Blogs</div>
+            <div class="text">
+                /* INJECT_ANNOUNCE */
+            </div>
+        </div>
+    </div>
+</template>
+
+            <template id="aside-post">
+    <div class="aside-post">
+
+    </div>
+</template>
+
+            <template id="aside-search">
+    <div class="aside-search">
+
+    </div>
+</template>
+
+        </aside>
+    </div>
+    <footer>
+        <div class="footer">
+    <div class="recommend">Friend links are welcome! Contact me through yes-noob at outlook.</div>
+    <div class="copyright">Copyright © 2026 ForYes All Rights Reserved.</div>
+</div>
+
+    </footer>
+    <div id="ground-mask"></div>
+
+</div>
+
+</body>
+
+</html>
