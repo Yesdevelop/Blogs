@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { viteSingleFile } from "vite-plugin-singlefile";
 import { ViteEjsPlugin as createEjsPlugin } from "vite-plugin-ejs";
 
 export default defineConfig({
@@ -26,6 +27,7 @@ export default defineConfig({
             dayNumber: 0,
             lastUpdateDate: "2026/1/1",
         }),
+        viteSingleFile()
     ],
     build: {
         outDir: "./docs",
