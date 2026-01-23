@@ -18,3 +18,34 @@
     </div>
 </div>
 
+<script>
+    let navmainDisplay = false;
+    let eventRegistered = false;
+
+    function toggleNavmain() {
+        if (!eventRegistered) {
+            if (window.maskOnclickEvents) {
+                window.maskOnclickEvents.push(() => {
+                    if (navmainDisplay) {
+                        toggleNavmain();
+                    }
+                })
+            } else {
+                return;
+            }
+        }
+        if (navmainDisplay) {
+            document.querySelector(".navmain").style.opacity = "0";
+            document.querySelector(".navmain").style.pointerEvents = "none";
+            document.querySelector(".navmain").style.right = "-70vw";
+            window.toggleMask();
+            navmainDisplay = false;
+        } else {
+            document.querySelector(".navmain").style.opacity = "1";
+            document.querySelector(".navmain").style.pointerEvents = "auto";
+            document.querySelector(".navmain").style.right = "0";
+            window.toggleMask();
+            navmainDisplay = true;
+        }
+    }
+</script>

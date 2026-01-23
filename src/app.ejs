@@ -22,6 +22,6 @@
     <footer>
         <%- include("components/footer.ejs") %>
     </footer>
-    <div id="ground-mask"></div>
+    <div id="ground-mask" onclick="for (let v of window.maskOnclickEvents) v();"></div>
 
 </div>

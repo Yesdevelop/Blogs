@@ -23,12 +23,18 @@
             flex: none;
             font-size: 24px;
             color: var(--primary);
+
+            @media screen and (max-width: 900px) {
+                & {
+                    flex: 1;
+                }
+            }
         }
 
         .mobile-button-items {
-            flex: 1;
             display: none;
-            text-align: right;
+            width: 2rem;
+            text-align: center;
             font-size: 22px;
             font-weight: bold;
 
@@ -69,7 +75,6 @@
 
             @media screen and (max-width: 900px) {
                 & {
-                    visibility: hidden;
                     opacity: 0;
                     transition: all 0.3s ease;
                     pointer-events: none;
