@@ -5,6 +5,7 @@
 
     .posts {
         padding-top: 6vh;
+        flex: 1;
 
         .post {
             display: flex;
@@ -15,7 +16,7 @@
             color: var(--text-color);
             gap: 10px;
 
-            &:last-child {
+            &:nth-last-of-type(1) {
                 border-bottom: 1px solid var(--text-color);
             }
 
@@ -29,14 +30,14 @@
                 gap: 20px;
             }
 
-            .preview {
+            .excerpt {
                 display: -webkit-box;
                 display: -moz-box;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 4;
-                line-clamp: 4;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
             }
         }
     }
