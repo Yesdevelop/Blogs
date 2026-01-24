@@ -31,13 +31,21 @@ const ASIDE_POST_TEMPLATE = document.getElementById("aside-post");
 const MAIN_SEARCH_TEMPLATE = document.getElementById("main-search");
 const ASIDE_SEARCH_TEMPLATE = document.getElementById("aside-search");
 
-let layout = HOME;
+const pairs = {
+    ABOUT: [MAIN_ABOUT_TEMPLATE, ASIDE_ABOUT_TEMPLATE],
+    ARCHIVES: [MAIN_ARCHIVES_TEMPLATE, ASIDE_ARCHIVES_TEMPLATE],
+    HOME: [MAIN_HOME_TEMPLATE, ASIDE_HOME_TEMPLATE],
+    POST: [MAIN_POST_TEMPLATE, ASIDE_POST_TEMPLATE],
+    SEARCH: [MAIN_SEARCH_TEMPLATE, ASIDE_SEARCH_TEMPLATE],
+}
+
+let layout = POST;
 
 function changeLayout() {
-    if (layout === HOME) {
-        document.querySelector("main").appendChild(MAIN_HOME_TEMPLATE.content.cloneNode(true));
-        document.querySelector("aside").appendChild(ASIDE_HOME_TEMPLATE.content.cloneNode(true));
-    }
+    const main = document.querySelector("main");
+    const aside = document.querySelector("aside");
+    main.appendChild(pairs[Object.keys(pairs)[layout]][0].content.cloneNode(true));
+    aside.appendChild(pairs[Object.keys(pairs)[layout]][1].content.cloneNode(true));
 }
 
 changeLayout();
