@@ -35,15 +35,11 @@
             }
         }
         if (navmainDisplay) {
-            document.querySelector(".navmain").style.opacity = "0";
-            document.querySelector(".navmain").style.pointerEvents = "none";
-            document.querySelector(".navmain").style.right = "-70vw";
+            document.querySelector(".navmain").className = "navmain";
             window.toggleMask();
             navmainDisplay = false;
         } else {
-            document.querySelector(".navmain").style.opacity = "1";
-            document.querySelector(".navmain").style.pointerEvents = "auto";
-            document.querySelector(".navmain").style.right = "0";
+            document.querySelector(".navmain").className += " display";
             window.toggleMask();
             navmainDisplay = true;
         }

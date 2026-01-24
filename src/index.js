@@ -4,13 +4,10 @@ window.toggleMask = () => {
     console.log(1)
     if (maskDisplay)
     {
-        document.getElementById("ground-mask").style.opacity = "0"
-        document.getElementById("ground-mask").style.pointerEvents = "none"
+        document.getElementById("ground-mask").className = "";
         maskDisplay = false;
-    }
-    else {
-        document.getElementById("ground-mask").style.opacity = "1"
-        document.getElementById("ground-mask").style.pointerEvents = "auto"
+    } else {
+        document.getElementById("ground-mask").className += " display";
         maskDisplay = true;
     }
 }

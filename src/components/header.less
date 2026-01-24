@@ -75,15 +75,16 @@
 
             @media screen and (max-width: 900px) {
                 & {
-                    opacity: 0;
                     transition: all 0.3s ease;
-                    pointer-events: none;
                     position: fixed;
                     top: 60px;
-                    right: -70vw;
                     width: 70vw;
                     height: 100vh;
                     z-index: 12;
+
+                    right: -70vw;
+                    opacity: 0;
+                    pointer-events: none;
 
                     flex-direction: column-reverse;
                     align-items: flex-start;
@@ -120,6 +121,12 @@
                     }
                 }
             }
+        }
+
+        .navmain.display {
+                    right: 0;
+                    opacity: 1;
+                    pointer-events: auto;
         }
     }
 

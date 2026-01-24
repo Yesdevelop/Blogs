@@ -76,8 +76,22 @@
     transition: all 0.3s ease;
     background: #0008;
     z-index: 5;
-    opacity: 0;
+
     pointer-events: none;
+    opacity: 0;
+}
+
+#ground-mask.display {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.headline {
+    color: var(--text-color);
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--primary);
+    text-align: center;
 }
 
 /* 基础元素 */
@@ -104,7 +118,7 @@ h2 {
 
     &:hover {
         box-shadow: 0 3px 5px 6px #888d;
-        transform: scale(1.01);
+        transform: scale(1.05);
     }
 }
 
